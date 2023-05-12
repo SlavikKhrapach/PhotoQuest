@@ -1,9 +1,17 @@
 {
-  "name": "slavikgr/328/application",
+  "name": "PhotoQuest",
   "authors": [
     {
       "name": "Slavik Khrapach",
-      "email": "hrapachslavik@gmail.com"
+      "email": "khrapach.slavik@student.greenriver.edu"
+    },
+    {
+      "name": "Giang Nguyen",
+      "email": "nguyen.giang.2@student.greenriver.edu"
+    },
+    {
+      "name": "Viktoriya Kovachyk",
+      "email": "kovachyk.viktoriya@student.greenriver.edu"
     }
   ],
   "require": {
