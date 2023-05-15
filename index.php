@@ -24,6 +24,12 @@ $f3->route('GET /', function() {
     echo $view->render('views/info.html');
 
 });
+// Define a homepage route
+$f3->route('GET /', function() {
 
+    $view = new Template();
+    echo $view->render('views/homepage.html');
+
+});
 // Run the Fat-Free
 $f3->run();
