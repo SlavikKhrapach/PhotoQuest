@@ -3,7 +3,7 @@
  * Slavik Khrapach
  * 5/11/2023
  * 328/PhotoQuest/index.php
- * Controller for howdy project
+ * Controller for PhotoQuest project
  *
  */
 
@@ -22,6 +22,13 @@ $f3->route('GET /', function() {
 
     $view = new Template();
     echo $view->render('views/info.html');
+
+});
+
+$f3->route('GET /current-competitions', function() {
+
+    $view = new Template();
+    echo $view->render('views/CurrentCompetitions.html');
 
 });
 

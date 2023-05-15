@@ -23,12 +23,16 @@ body .container {
     padding: 0;
     width: 100%;
     margin: 0;
+    align-items: unset !important;
+    display: unset !important;
 }
 
 .navbar ul {
+    height: auto;
     padding: 0;
     margin: 0;
     width: 100%;
+    top: 10px;
 }
 
 .navbar hr {
@@ -42,8 +46,13 @@ hr {
     width: 100%;
 }
 
-a:link {
-    text-decoration: none;
+a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+a:hover {
+    text-decoration: underline !important;
 }
 
 li a:hover {
@@ -58,4 +67,8 @@ li a {
     display: block;
     color: black;
     padding: 20px 0 20px 30px;
+}
+
+.competition {
+    padding: 15px 30px;
 }
