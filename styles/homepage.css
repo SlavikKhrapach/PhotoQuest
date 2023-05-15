@@ -178,7 +178,7 @@ nav:hover ul{
 }
 
 .parallax{
-    background: url(http://www.amazingwallpaperz.com/wp-content/uploads/Photography-Beautiful-Wallpapers.jpg)repeat fixed 1%;
+    background: repeat fixed 1%;
 }
 
 .parallax-inner{
