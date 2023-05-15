@@ -24,7 +24,10 @@ $f3->route('GET /', function() {
     echo $view->render('views/info.html');
 
 });
+// Define a homepage route
+$f3->route('GET /', function() {
 
+<<<<<<< HEAD
 $f3->route('GET /current-competitions', function() {
 
     $view = new Template();
@@ -32,5 +35,11 @@ $f3->route('GET /current-competitions', function() {
 
 });
 
+=======
+    $view = new Template();
+    echo $view->render('views/homepage.html');
+
+});
+>>>>>>> 993034bcad324b451417437cab3ef9da9803d534
 // Run the Fat-Free
 $f3->run();

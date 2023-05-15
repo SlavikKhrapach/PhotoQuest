@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+h2{
+    font-family: 'playfair Display', serif;
+    font-size: 190%;
+    font-weight: 700;
+    color: #2C2C2C;
+    text-align: center;
+    text-decoration: underline;
+}
+
+p{
+    font-family: 'raleway', serif;
+    color: #2C2C2C;
+    font-size: 120%;
+    line-height: 180%;
+    text-align: justify;
+    font-weight: 300;
+}
+
+img{
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.intro{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background:  no-repeat 50% 50%;
+    background-size: cover;
+    display: table;
+    top: 0;
+}
+
+.intro .inner{
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    max-width: none;
+}
+
+.content{
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1{
+    font-family: 'playfair display', serif;
+    font-size: 300%;
+    font-weight: 700;
+    color:#fff;
+    text-align: center;
+    padding: 2%;
+    text-shadow: 0px 0px 200px #000;
+}
+
+.content p{
+    color: white;
+}
+.inner{
+    max-width: 600px;
+    margin: auto;
+    font-size: 120%;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/*------Start Nav-------*/
+nav{
+    float: left;
+    padding: 5% 5% 0 0;
+}
+
+nav ul{
+    list-style: none;
+    float: left;
+    padding: 8px 0px;
+    width: 20%;
+    z-index: 1000;
+    display: none;
+    left: 45px;
+    top:60px;
+}
+
+nav ul li{
+    font-family: 'raleway', serif;
+    font-size: 110%;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+nav li{
+    width: 100%;
+    padding: 8px 0 10px 7px;
+    margin: 0;
+}
+
+nav:hover ul{
+    display: block;
+    position: absolute;
+}
+
+#menu-icon{
+    width: 30px;
+    height: 30px;
+    background:  center;
+    display: inline-block;
+    background-size: cover;
+    margin: 50px 0 0 50px;
+}
+/*------End Nav-------*/
+
+.left-col{
+    width: 55%;
+    float: left;
+    margin: 3%;
+}
+
+.sidebar{
+    width: 25%;
+    float: left;
+    margin: 2%;
+}
+
+.third{
+    width: 22.3333333%;
+    padding: 2%;
+    float: left;
+    margin: 2%;
+}
+
+.third{
+    border: ridge 10px;
+}
+
+.third img:hover{
+    opacity: 0.6;
+}
+
+.contact p{
+    text-align: center;
+    letter-spacing: 5px;
+
+}
+
+.clearfix{
+    clear: both;
+    height: 3%;
+}
+
+.contact a{
+    color: #2C2C2C;
+
+}
+
+.break{
+    display: inline;
+}
+
+.parallax{
+    background: repeat fixed 1%;
+}
+
+.parallax-inner{
+    padding-top: 17%;
+}
+
+.social{
+    list-style: none;
+    text-align: center;
+}
+
+.social li{
+    display: inline;
+    text-align: center;
+    position: relative;
+    right: 3%;
+}
+
+.social i{
+    font-size: 200%;
+    margin: 10px 15px;
+    color: #2C2C2C;
+}
+
+.social i:hover{
+    color:#606060;
+}
+
+footer.second{
+    background-color: #2C2C2C;
+}
+footer.second p{
+    color:white;
+    text-align:center;
+    padding: 5%;
+}
+
+@media screen and (max-width:600px){
+    #menu-icon{
+        margin: 26px 0 0 26px;
+    }
+
+    nav ul{
+        padding: 8px 0;
+        left: 20px;
+        top: 40px;
+        width: 30%;
+    }
+
+    .inner{
+        font-size: 100%;
+    }
+
+    .content h1{
+        font-size: 250%;
+    }
+
+    p{
+        font-size: 120%;
+    }
+    h2{
+        font-size: 160%;
+    }
+
+    .left-col{
+        width: 90%;
+        padding: 0 2%;
+    }
+
+    .sidebar{
+        width: 96%;
+        margin: 0;
+    }
+
+    img{
+        padding: 2%;
+    }
+    .third{
+        width: 96%;
+        padding: 0;
+        margin: auto;
+    }
+
+    .parallax{
+        display: none;
+    }
+
+    .social i{
+        font-size: 150%;
+    }
+    .contact p{
+        position: relative;
+        left: 5%;
+    }
+
+    #five{
+        position: relative;
+        left: 0;
+    }
+
+}
