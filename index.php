@@ -32,5 +32,24 @@ $f3->route('GET /current-competitions', function() {
 
 });
 
+
+//Define a login route
+$f3->route('GET /loginpage', function() {
+
+    $view = new Template();
+    echo $view->render('views/login.html');
+}
+);
+
+// posts user data from login page to the database
+//$f3->route('GET|POST /personexperience', function($f3) {
+//    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+//        $f3->reroute('openings');
+//    }
+//    $view = new Template();
+//    echo $view->render('views/experience.html');
+//}
+//);
+
 // Run the Fat-Free
 $f3->run();
