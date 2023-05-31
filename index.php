@@ -41,6 +41,14 @@ $f3->route('GET /loginpage', function() {
 }
 );
 
+//Define an account creation route
+$f3->route('GET /createaccount', function() {
+
+    $view = new Template();
+    echo $view->render('views/newaccount.html');
+}
+);
+
 // posts user data from login page to the database
 //$f3->route('GET|POST /personexperience', function($f3) {
 //    if ($_SERVER['REQUEST_METHOD'] == 'POST'){

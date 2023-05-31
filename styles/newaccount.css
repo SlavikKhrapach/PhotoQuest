@@ -1,0 +1,13 @@
+body {
+    background-color: tan;
+}
+.create{
+    text-align: center;
+    display: block;
+    margin-top: 10em;
+    color: black;
+}
+
+.signupform{
+    text-align: center;
+}
