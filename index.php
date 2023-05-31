@@ -34,16 +34,20 @@ $f3->route('GET /current-competitions', function() {
 
 
 //Define a login route
-$f3->route('GET /loginpage', function() {
-
+$f3->route('GET|POST /loginpage', function($f3) {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $f3->reroute('/');
+    }
     $view = new Template();
     echo $view->render('views/login.html');
 }
 );
 
 //Define an account creation route
-$f3->route('GET /createaccount', function() {
-
+$f3->route('GET|POST /createaccount', function($f3) {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $f3->reroute('/');
+    }
     $view = new Template();
     echo $view->render('views/newaccount.html');
 }
