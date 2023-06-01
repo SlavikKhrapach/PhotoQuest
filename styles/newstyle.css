@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    margin: 0;
+    padding:0;
+    border: 0;
+    height: 100%;
+    width: auto;
+}
+
+.logo {
+    position: relative;
+    width: 50%;
+    margin: auto;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.col-3 {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.intro {
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    background: url('../images/intro2.png') no-repeat 50% 50%;
+    background-size: cover;
+    display: table;
+    top: 0;
+    position: sticky;
+}
+
+.nav {
+    display: inline-block !important;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, .2);
+    overflow: hidden;
+
+}
+
+p {
+    font-size: 2em;
+    width: 70%;
+}
+
+.info {
+    margin: 20px 0 30px 10%;
+    padding-bottom: 30px;
+}
+
+.stick {
+    position: fixed !important;
+}
+
+.top-nav {
+    position: fixed;
+    top: 0;
+    background: url('../images/intro2.png') no-repeat 50% 84%;
+    background-size: cover;
+}
+
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+}
+
+.nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 2em;
+}
+
+li a {
+    padding: 0;
+    margin: 0;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+.nav ul li .nav-link {
+    text-decoration: none;
+    color: #ccc;
+
+}
+
+
+.nav ul li :hover {
+    background-color: #1f1f1f;
+}
+
+.nav ul li .nav-link:hover {
+    background: #333;
+    color: #efefef
+}
+
+
+
+
+
+
+
+/*------------- Menu icon and nav li list---------------------------*/
+
+/*--------------------------------------------------------------------------------Start of Menu icon bar----------------------------------------*/
+
+
+/*--------------------------------------------------------------------------------End of Menu icon bar----------------------------------------*/
+
+
+/*--------------------------------------------------------------------------Start of All nav li list-----------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------------------------------------End of All nav li list-------------------------------------------------------------*/
+
+
+
+/*--------End of Menu icon and nav li list------------------*/
+
+
+
+/*--------------------------------------Start of Menu icon and nav li list------------------*/
+
+
+/*--------End of Menu icon and nav li list------------------*/
+
+
+
+
+
+
+
+/*----------------------Scroll to top start----------------------------------------*/
+
+
+/*------Scroll to top end-----------------------------------*/
+
+
+/*------Start Contact/Footer/Parallex-----------------------------------*/
+

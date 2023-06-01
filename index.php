@@ -53,6 +53,14 @@ $f3->route('GET|POST /createaccount', function($f3) {
 }
 );
 
+//New home page experiment
+$f3->route('GET /homepage', function($f3) {
+
+    $view = new Template();
+    echo $view->render('views/new-homepage.html');
+}
+);
+
 // posts user data from login page to the database
 //$f3->route('GET|POST /personexperience', function($f3) {
 //    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
