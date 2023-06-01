@@ -21,7 +21,7 @@ $f3 = Base::instance();
 $f3->route('GET /', function() {
 
     $view = new Template();
-    echo $view->render('views/info.html');
+    echo $view->render('views/new-homepage.html');
 
 });
 
@@ -54,12 +54,19 @@ $f3->route('GET|POST /createaccount', function($f3) {
 );
 
 //New home page experiment
-$f3->route('GET /homepage', function($f3) {
+$f3->route('GET /homepage', function() {
 
     $view = new Template();
     echo $view->render('views/new-homepage.html');
 }
 );
+
+$f3->route('GET /new-current-competitions', function() {
+
+    $view = new Template();
+    echo $view->render('views/new-current-competitions.html');
+
+});
 
 // posts user data from login page to the database
 //$f3->route('GET|POST /personexperience', function($f3) {

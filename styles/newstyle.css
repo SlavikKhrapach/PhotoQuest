@@ -21,11 +21,14 @@ a {
     text-decoration: none !important;
 }
 
+.info a {
+    color: black !important;
+}
+
 .col-3 {
     margin: 0;
     padding: 0;
 }
-
 
 
 .intro {
@@ -37,6 +40,10 @@ a {
     display: table;
     top: 0;
     position: sticky;
+}
+
+h2 {
+    font-size: 2.5em !important;
 }
 
 .nav {
@@ -53,6 +60,19 @@ p {
     font-size: 2em;
     width: 70%;
 }
+
+.login {
+    float: right;
+    font-size: 2.5em;
+    padding: 15px 25px 25px 25px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.28) !important;
+}
+
+.login a {
+    color: #e8e7e7;
+}
+
 
 .info {
     margin: 20px 0 30px 10%;
@@ -88,17 +108,15 @@ li a {
     background-color: rgba(0, 0, 0, 0.06) !important;
 }
 
-
 a:hover {
     text-decoration: underline !important;
 }
 
 .nav ul li .nav-link {
     text-decoration: none;
-    color: #ccc;
+    color: #e8e7e7;
 
 }
-
 
 .nav ul li :hover {
     background-color: #1f1f1f;
@@ -108,49 +126,3 @@ a:hover {
     background: #333;
     color: #efefef
 }
-
-
-
-
-
-
-
-/*------------- Menu icon and nav li list---------------------------*/
-
-/*--------------------------------------------------------------------------------Start of Menu icon bar----------------------------------------*/
-
-
-/*--------------------------------------------------------------------------------End of Menu icon bar----------------------------------------*/
-
-
-/*--------------------------------------------------------------------------Start of All nav li list-----------------------------------------------------------*/
-
-
-
-/*------------------------------------------------------------------------------------End of All nav li list-------------------------------------------------------------*/
-
-
-
-/*--------End of Menu icon and nav li list------------------*/
-
-
-
-/*--------------------------------------Start of Menu icon and nav li list------------------*/
-
-
-/*--------End of Menu icon and nav li list------------------*/
-
-
-
-
-
-
-
-/*----------------------Scroll to top start----------------------------------------*/
-
-
-/*------Scroll to top end-----------------------------------*/
-
-
-/*------Start Contact/Footer/Parallex-----------------------------------*/
-
