@@ -138,11 +138,41 @@ a:hover {
     color: #efefef
 }
 
+.questName{
+    margin: 5em 0 30px 10%;
+}
+
+.dishDescription {
+    margin: 20px 0 6em 10%;
+}
+
+
+.userName {
+    margin: 5em 0 30px 10%;
+    font-size: 35px;
+}
+
 .questPhoto {
     max-height: 700px;
     width: 800px;
     object-fit: cover;
     object-position: 100% 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.vote {
+    font-size: 40px;
+    text-align: center;
+    margin: 2em 0 5em 0;
+}
+
+.submitVote {
+    margin: 2em 0 0 0;
+    padding: 10px 12px 10px 12px;
+    font-size: 30px ;
 }
 
 /* ----------------- LogIn/SingUp ----------------- */

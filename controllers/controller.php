@@ -47,7 +47,7 @@ class Controller
 
     function logIn($f3)
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $f3->reroute('/');
         }
         $view = new Template();
@@ -56,18 +56,22 @@ class Controller
 
     function logUp($f3)
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $f3->reroute('/');
         }
         $view = new Template();
         echo $view->render('views/NewAccount.html');
     }
 
-    function questTester()
+    function questTester($f3)
     {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $f3->reroute('/');
+        }
         $view = new Template();
         echo $view->render('views/Quest.html');
     }
+<<<<<<< HEAD
 
     function photoUpload()
     {
@@ -94,3 +98,6 @@ class Controller
 
     }
 }
+=======
+}
+>>>>>>> 7396f80a925605d646667ffde19c1f2c4e850b2b
