@@ -15,6 +15,9 @@ error_reporting(E_ALL);
 require_once('vendor/autoload.php');
 require_once('controllers/controller.php');
 
+// Connect to Database
+$dataLayer = new DataLayer();
+
 // Create an F3 (Fat-Free Framework) object
 $f3 = Base::instance();
 
@@ -36,8 +39,11 @@ $f3->route('GET /about-us', [$controller, 'aboutUs']);
 
 $f3->route('GET /contact-us', [$controller, 'contactUs']);
 
+$f3->route('POST /upload', [$controller, 'uploadPhoto']);
+
 // Test pages
 $f3->route('GET /questTester', [$controller, 'questTester']);
+
 
 
 
