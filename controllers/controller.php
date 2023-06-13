@@ -71,7 +71,7 @@ class Controller
         $view = new Template();
         echo $view->render('views/Quest.html');
     }
-<<<<<<< HEAD
+
 
     function photoUpload()
     {
@@ -95,9 +95,6 @@ class Controller
             // Handle upload error
             // Your code here
         }
-
     }
 }
-=======
-}
->>>>>>> 7396f80a925605d646667ffde19c1f2c4e850b2b
+
