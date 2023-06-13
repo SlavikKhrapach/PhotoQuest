@@ -34,14 +34,26 @@
 <!---------------------------------------------End Photography Image------------------>
 
 
-<section class="info">
+<section class="content">
+    <br>
 
-    <div class="prompt">
-        <h1 class="questName">Salmon Wellington</h1>
-        <p class="dishDescription">A twist on the classic Beef Wellington, this dish features a beautiful fillet of
-            fresh Pacific Northwest salmon wrapped in puff pastry with a flavorful mixture
-            of spinach, cream cheese, and herbs. Show us your skills in capturing the beautiful
-            presentation of this dish and the delicious flaky texture of the pastry.</p>
+    <div class="prompt row">
+        <div class="col-9">
+            <h1 class="questName">Salmon Wellington</h1>
+            <p class="dishDescription">A twist on the classic Beef Wellington, this dish features a beautiful fillet of
+                fresh Pacific Northwest salmon wrapped in puff pastry with a flavorful mixture
+                of spinach, cream cheese, and herbs. Show us your skills in capturing the beautiful
+                presentation of this dish and the delicious flaky texture of the pastry.</p>
+        </div>
+        <div class="col-3">
+            <form action="upload.php" method="post" enctype="multipart/form-data" class="file-form">
+                <label for="image" class="drop-container">
+                    <span class="drop-title">Drop files here</span>
+                    <input type="file" name="image" id="image">
+                    <input type="submit" value="Upload">
+                </label>
+            </form>
+        </div>
     </div>
 
     <hr>
