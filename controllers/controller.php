@@ -24,6 +24,7 @@ class Controller
         $view = new Template();
         echo $view->render('views/CurrentQuests.html');
     }
+
     function pastQuests()
     {
         $view = new Template();
@@ -44,7 +45,7 @@ class Controller
 
     function logIn($f3)
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $f3->reroute('/');
         }
         $view = new Template();
@@ -53,15 +54,18 @@ class Controller
 
     function logUp($f3)
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $f3->reroute('/');
         }
         $view = new Template();
         echo $view->render('views/NewAccount.html');
     }
 
-    function questTester()
+    function questTester($f3)
     {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $f3->reroute('/');
+        }
         $view = new Template();
         echo $view->render('views/Quest.html');
     }
