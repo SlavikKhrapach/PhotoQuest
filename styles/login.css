@@ -1,5 +1,11 @@
 body {
-    background-color: tan;
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    background: url('../images/intro2.png') no-repeat 50% 50%;
+    background-size: cover;
+    display: table;
+    top: 0;
 }
 
 .login{
@@ -7,8 +13,12 @@ body {
     margin-top: 10em;
 }
 
-.loginform{
+.loginForm{
+    font-size: 3em;
     text-align: center;
+    background-color: rgba(252, 244, 232, 0.34);
+    display: block;
+
 }
 
 .createacct {

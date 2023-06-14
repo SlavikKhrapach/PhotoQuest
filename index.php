@@ -13,70 +13,41 @@ error_reporting(E_ALL);
 
 // Require the autoload file
 require_once('vendor/autoload.php');
+require_once('controllers/controller.php');
+
+// Connect to Database
+$dataLayer = new DataLayer();
 
 // Create an F3 (Fat-Free Framework) object
 $f3 = Base::instance();
+session_start();
+
+//Create an instance of the Controller class
+$controller = new Controller($f3);
 
 // Define a default route
-$f3->route('GET /', function() {
+$f3->route('GET /', [$controller, 'home']);
 
-    $view = new Template();
-    echo $view->render('views/new-homepage.html');
+$f3->route('GET /current-quests', [$controller, 'currentQuests']);
 
-});
+$f3->route('GET /past-quests', [$controller, 'pastQuests']);
 
-$f3->route('GET /current-competitions', function() {
+$f3->route('GET|POST /login', [$controller, 'logIn']);
 
-    $view = new Template();
-    echo $view->render('views/CurrentCompetitions.html');
-
-});
+$f3->route('GET|POST /new-account', [$controller, 'logUp']);
 
 
-//Define a login route
-$f3->route('GET|POST /loginpage', function($f3) {
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $f3->reroute('/');
-    }
-    $view = new Template();
-    echo $view->render('views/login.html');
-}
-);
+$f3->route('GET /about-us', [$controller, 'aboutUs']);
 
-//Define an account creation route
-$f3->route('GET|POST /createaccount', function($f3) {
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $f3->reroute('/');
-    }
-    $view = new Template();
-    echo $view->render('views/newaccount.html');
-}
-);
+$f3->route('GET /contact-us', [$controller, 'contactUs']);
 
-//New home page experiment
-$f3->route('GET /homepage', function() {
+$f3->route('POST /upload', [$controller, 'uploadPhoto']);
 
-    $view = new Template();
-    echo $view->render('views/new-homepage.html');
-}
-);
+// Test pages
+$f3->route('GET|POST /questTester', [$controller, 'questTester']);
 
-$f3->route('GET /new-current-competitions', function() {
 
-    $view = new Template();
-    echo $view->render('views/new-current-competitions.html');
 
-});
-
-// posts user data from login page to the database
-//$f3->route('GET|POST /personexperience', function($f3) {
-//    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-//        $f3->reroute('openings');
-//    }
-//    $view = new Template();
-//    echo $view->render('views/experience.html');
-//}
-//);
 
 // Run the Fat-Free
 $f3->run();

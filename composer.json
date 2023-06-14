@@ -1,20 +1,26 @@
 {
-  "name": "PhotoQuest",
-  "authors": [
-    {
-      "name": "Slavik Khrapach",
-      "email": "khrapach.slavik@student.greenriver.edu"
+    "name": "photo/quest",
+    "authors": [
+        {
+            "name": "Slavik Khrapach",
+            "email": "khrapach.slavik@student.greenriver.edu"
+        },
+        {
+            "name": "Giang Nguyen",
+            "email": "nguyen.giang.2@student.greenriver.edu"
+        },
+        {
+            "name": "Viktoriya Kovachyk",
+            "email": "kovachyk.viktoriya@student.greenriver.edu"
+        }
+    ],
+    "require": {
+        "bcosca/fatfree-core": "dev-master"
     },
-    {
-      "name": "Giang Nguyen",
-      "email": "nguyen.giang.2@student.greenriver.edu"
-    },
-    {
-      "name": "Viktoriya Kovachyk",
-      "email": "kovachyk.viktoriya@student.greenriver.edu"
+    "autoload": {
+        "classmap": [
+            "model/",
+            "controllers/"
+        ]
     }
-  ],
-  "require": {
-    "bcosca/fatfree-core": "dev-master"
-  }
 }
