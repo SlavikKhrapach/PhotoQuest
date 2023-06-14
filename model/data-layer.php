@@ -58,6 +58,35 @@ class DataLayer {
         }
     }
 
+    function vote()
+    {
+        $sql = "SELECT votes
+                FROM UploadedPhotos 
+                WHERE username 'Alex'";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+
+        //4. Execute
+        $statement->execute();
+
+        $savedVotes = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $savedVotes++;
+
+        $sql = "INSERT INTO UploadedPhotos (votes)
+        VALUES ($savedVotes)";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+
+        //4. Execute
+        $statement->execute();
+    }
+
 
     function uploadPhoto($fileName)
     {
