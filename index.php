@@ -20,6 +20,7 @@ $dataLayer = new DataLayer();
 
 // Create an F3 (Fat-Free Framework) object
 $f3 = Base::instance();
+session_start();
 
 //Create an instance of the Controller class
 $controller = new Controller($f3);
@@ -31,9 +32,10 @@ $f3->route('GET /current-quests', [$controller, 'currentQuests']);
 
 $f3->route('GET /past-quests', [$controller, 'pastQuests']);
 
-$f3->route('GET /login', [$controller, 'logIn']);
+$f3->route('GET|POST /login', [$controller, 'logIn']);
 
-$f3->route('GET /new-account', [$controller, 'logUp']);
+$f3->route('GET|POST /new-account', [$controller, 'logUp']);
+
 
 $f3->route('GET /about-us', [$controller, 'aboutUs']);
 
@@ -42,7 +44,7 @@ $f3->route('GET /contact-us', [$controller, 'contactUs']);
 $f3->route('POST /upload', [$controller, 'uploadPhoto']);
 
 // Test pages
-$f3->route('GET /questTester', [$controller, 'questTester']);
+$f3->route('GET|POST /questTester', [$controller, 'questTester']);
 
 
 
