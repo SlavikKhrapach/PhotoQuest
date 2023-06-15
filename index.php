@@ -36,6 +36,7 @@ $f3->route('GET|POST /login', [$controller, 'logIn']);
 
 $f3->route('GET|POST /new-account', [$controller, 'logUp']);
 
+$f3->route('GET /logout', [$controller, 'signOut']);
 
 $f3->route('GET /about-us', [$controller, 'aboutUs']);
 

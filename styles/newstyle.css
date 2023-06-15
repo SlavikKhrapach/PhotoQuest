@@ -432,23 +432,12 @@ body {
 }
 
 .contactUsForm {
-  margin-left: 30em;
+    margin-left: 30em;
 }
 
-.name1{
+.contactUsForm label {
     font-weight: bold;
-    margin: 1em 0 1em 0;
-}
-
-.name2{
-    font-weight: bold;
-    margin: 1em 0 1em 0;
-}
-
-
-.name3{
-    font-weight: bold;
-    margin: 1em 0 1em 0;
+    margin: 1em 0 0.5em 0;
 }
 
 .right {
@@ -456,4 +445,7 @@ body {
     padding: 8px 8px 8px 8px;
 }
 
+.contactUsForm input, .contactUsForm textarea {
+    border: solid 2px black;
+}
 
