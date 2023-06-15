@@ -7,7 +7,7 @@
     <link rel="icon" href="images/favicon5.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
-<body>
+<body class="contactb">
 <!---------------------------------------------Start Photography Image------------------>
 <section class="intro">
     
@@ -35,26 +35,27 @@
 
 <section id="content">
     
-    <h1>Contact Us</h1>
+    <h1 class="contactheader">Contact Us</h1>
     
-    <form action="#" method="" id="contactUsForm">
+    <form action="#" method="" class="contactUsForm">
         <div class="row">
             <div class="col-8">
                 <div class="form-row">
                     <div class="form-group col-6">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" name=fname" id="name">
+                        <label for="name" class="name1">Name</label>
+                        <input type="text" class="form-control" name=fname" id="name" placeholder="sarah beth">
                     </div>
                     <div class="form-group col-6">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email"class="form-control">
+                        <label for="email" class="name2">Email</label>
+                        <input type="email" name="email" id="email"class="form-control" placeholder="sarahbeth@gmail.com">
                     </div>
                     
                     <div class="form-row">
                         <div class="col-12">
                             <div class="from-group col-12">
-                                <label for="biography">Message</label>
-                                <textarea name="biography" class="form-control" id="biography" rows="8"></textarea>
+                                <label for="biography" class="name3">Message</label>
+                                <textarea name="biography" class="form-control" id="biography" rows="8"
+                                          placeholder="type your message here..."></textarea>
                             </div>
                         </div>
                     </div>
@@ -62,7 +63,7 @@
             </div>
         </div>
     
-        <button class="right" type="submit" >Submit</button>
+        <button class="right" type="submit">Submit</button>
         
     </form>
 </section>
