@@ -3,10 +3,13 @@
 class Controller
 {
     private $_f3;
+    private $user;
 
     function __construct($f3)
     {
         $this->_f3 = $f3;
+        $this->user = $GLOBALS['dataLayer']->userInfo();
+        $this->_f3->set('user', $this->user);
     }
 
 
@@ -88,6 +91,12 @@ class Controller
         }
         $view = new Template();
         echo $view->render('views/NewAccount.html');
+    }
+
+    function signOut()
+    {
+        session_destroy();
+        $this->_f3->reroute('/');
     }
 
     function questTester($f3)

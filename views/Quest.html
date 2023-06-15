@@ -19,7 +19,15 @@
         <a href="/328/PhotoQuest"><img src="images/logo2.png" alt="logo" class="logo"></a>
 
         <div class="login">
-            <a href="login">Log In/Sign Up</a>
+            <check if="{{ @user != false }}">
+                <true>
+                    <i class="text-white">{{ @user.username }} /</i>
+                    <a href="logout">Log Out</a>
+                </true>
+                <false>
+                    <a href="login">Log In/Sign Up</a>
+                </false>
+            </check>
         </div>
 
         <div class="nav bottom-nav">

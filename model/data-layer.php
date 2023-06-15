@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Sdev328/PhotoQuest/pdo-config-photoquest.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../pdo-config-photoquest.php');
 
 class DataLayer
 {
@@ -166,7 +166,7 @@ class DataLayer
 
         // Insert into database
         $sql = "INSERT INTO votes (account_id, photo_id) VALUES (:account_id, :photo_id)";
-        
+
         // Prepare the statement
         $statement = $this->_dbh->prepare($sql);
 
