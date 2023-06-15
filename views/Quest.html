@@ -45,7 +45,7 @@
                 presentation of this dish and the delicious flaky texture of the pastry.</p>
         </div>
         <div class="col-3">
-            <form action="upload.php" method="post" enctype="multipart/form-data" class="file-form">
+            <form action="#" method="post" enctype="multipart/form-data" class="file-form">
                 <label for="image" class="drop-container">
                     <span class="drop-title">Drop files here</span>
                     <input type="file" name="image" id="image">
@@ -60,10 +60,9 @@
     <form action="#" method= POST>">
     <div class="contest">
         <h3 class="userName"> PhoenixRising</h3>
-            <img class="questPhoto" src="images/SalmonWellington/SalmonWellington1.jpg" data-action="zoom" data-original="images/SalmonWellington/SalmonWellington1.jpg" alt="journey_start_thumbnail" />
+        <img class="questPhoto" src="images/SalmonWellington/SalmonWellington1.jpg" data-action="zoom" data-original="images/SalmonWellington/SalmonWellington1.jpg" alt="journey_start_thumbnail" />
 
         <div class="count">
-            <form action="">
                 Vote: <input type ="radio" name="vote" value="0"><br>
         </div>
     </div>
@@ -123,6 +122,40 @@
 
 <include href="views/includes/footer.html"></include>
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/zooming.min.js'></script><script src="scripts/script.js"></script>
+<script>
+    document.getElementById('upload-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the form from submitting normally
+
+        // Get form data
+        const formData = new FormData(this);
+        const username = "Bob"//document.getElementById('username').value; //todo: change that
+        const quest = "Statue of Liberty" //document.getElementById('quest').value;
+
+        // Append username and quest to the form data
+        formData.append('username', username);
+        formData.append('quest', quest);
+
+        // Call the uploadPhoto function via AJAX
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'DataLayer.php', true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Handle the response if needed
+                const response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                    alert('Image uploaded successfully!');
+                } else {
+                    alert('Failed to upload image.');
+                }
+            } else {
+                // Handle the error if needed
+                alert('An error occurred during the upload.');
+            }
+        };
+        xhr.send(formData);
+    });
+</script>
+
 
 </body>
 </html>

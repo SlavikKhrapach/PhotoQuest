@@ -14,8 +14,6 @@ class Controller
 
     function home()
     {
-        echo $GLOBALS['dataLayer']->createIfNotExists();
-
         // Display a view page
         $view = new Template();
         echo $view->render('views/Home.html');
@@ -65,11 +63,11 @@ class Controller
 
     function questTester($f3)
     {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $GLOBALS['dataLayer']->vote();
-            echo "vote submitted successfully!";
-            $f3->reroute('/');
-        }
+//        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//            $GLOBALS['dataLayer']->vote();
+//            echo "vote submitted successfully!";
+//            $f3->reroute('/');
+//        }
         $view = new Template();
         echo $view->render('views/Quest.html');
     }
