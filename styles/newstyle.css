@@ -144,7 +144,7 @@ a:hover {
 }
 
 .questName{
-    margin-bottom: 5px;
+    text-align: center;
 }
 
 .dishDescription {
@@ -168,16 +168,18 @@ a:hover {
 }
 
 
-.vote {
-    font-size: 40px;
+.count {
+    font-size: 25px;
     text-align: center;
-    margin: 2.1em 0 5em 0;
+    margin: 2em 0 5em 0;
 }
 
 .submitVote {
-    margin: 2em 0 0 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 12px 10px 12px;
-    font-size: 30px ;
+    font-size: 20px ;
 }
 
 /* ----------------- LogIn/SingUp ----------------- */
@@ -417,3 +419,41 @@ body {
     0% { opacity:0; }
     100% { opacity:100%; }
 }
+
+/* ----------------- Contact Us ----------------- */
+
+.contactb{
+    overflow-x: hidden;
+}
+
+.contactheader {
+    text-align: center;
+    margin: 2em 0 1em 0;
+}
+
+.contactUsForm {
+  margin-left: 30em;
+}
+
+.name1{
+    font-weight: bold;
+    margin: 1em 0 1em 0;
+}
+
+.name2{
+    font-weight: bold;
+    margin: 1em 0 1em 0;
+}
+
+
+.name3{
+    font-weight: bold;
+    margin: 1em 0 1em 0;
+}
+
+.right {
+    margin: 2em 0 2em 0;
+    padding: 8px 8px 8px 8px;
+}
+
+
