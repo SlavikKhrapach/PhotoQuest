@@ -1,12 +1,26 @@
 <?php
+/**
+ * 328/PhotoQuest/model/data-layer.php
+ * Returns data for the PhotoQuest website
+ * Reads/writes the DB
+ * This is part of the MODEL
+*/
 
+//connect the database
 require_once($_SERVER['DOCUMENT_ROOT'].'/../pdo-config-photoquest.php');
-
+/**
+ * Class DataLayer
+ */
 class DataLayer
 {
-
+    /**
+     * @var PDO Database connection object
+     */
     private $_dbh;
 
+    /**
+     * DataLayer constructor.
+     */
     function __construct()
     {
         try {
@@ -18,6 +32,13 @@ class DataLayer
         }
     }
 
+    /**
+     * Sign up a new user.
+     *
+     * @param string $username The username
+     * @param string $password The password
+     * @return bool True if sign up is successful, false otherwise
+     */
     function signUp($username, $password)
     {
         // Check if the username already exists
@@ -68,6 +89,13 @@ class DataLayer
         return true;
     }
 
+    /**
+     * Sign in a user.
+     *
+     * @param string $username The username
+     * @param string $password The password
+     * @return bool True if sign in is successful, false otherwise
+     */
     function signIn($username, $password)
     {
         // Get the account from the database
@@ -95,7 +123,13 @@ class DataLayer
         return false;
     }
 
-    function getAllQuest() {
+    /**
+     * Get all quests.
+     *
+     * @return array The array of quests
+     */
+    function getAllQuest()
+    {
         $sql = "SELECT * FROM photos";
 
         // Prepare the statement
@@ -115,7 +149,14 @@ class DataLayer
         return [];
     }
 
-    function vote($photo_id) {
+    /**
+     * Vote for a photo.
+     *
+     * @param int $photo_id The photo ID
+     * @return bool True if the vote is successful, false otherwise
+     */
+    function vote($photo_id)
+    {
         // Check if photo exists
         $sql = "SELECT * FROM photos WHERE id = :id";
 
@@ -188,6 +229,11 @@ class DataLayer
         return true;
     }
 
+    /**
+     * Get user information.
+     *
+     * @return array|bool The user information if logged in, false otherwise
+     */
     function userInfo()
     {
         // Check if logged in
@@ -218,54 +264,46 @@ class DataLayer
         return false;
     }
 
+    /**
+     * Add a photo.
+     */
     function addPhoto()
     {
         // $sql = "INSERT";
     }
 
-    function createIfNotExists() // todo it will go away
+    /**
+     * Create the "UploadedPhotos" table if it doesn't exist.
+     *
+     * @return bool True if the table creation is successful, false otherwise
+     */
+    function createIfNotExists()
     {
-        //1. Define the query (test first!)
-        // $sql = "CREATE TABLE IF NOT EXISTS UploadedPhotos (
-        //         username VARCHAR(50) NOT NULL ,
-        //         photo BLOB NOT NULL ,
-        //         votes INT(4) NOT NULL DEFAULT '0' ,
-        //         quest VARCHAR(50) NOT NULL ,
-        //         date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        //         UNIQUE (`username`, `quest`)) ENGINE = InnoDB;
-        // )";
+        // 1. Define the query (test first!)
+        $sql = "CREATE TABLE IF NOT EXISTS UploadedPhotos (
+                 username VARCHAR(50) NOT NULL ,
+                 photo BLOB NOT NULL ,
+                 votes INT(4) NOT NULL DEFAULT '0' ,
+                 quest VARCHAR(50) NOT NULL ,
+                 date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                 UNIQUE (`username`, `quest`)) ENGINE = InnoDB;
+         )";
 
-        // //2. Prepare the statement
-        // $statement = $this->_dbh->prepare($sql);
+        // 2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
 
-        // //3. Bind the parameters
+        // 3. Bind the parameters
 
-        // //4. Execute
-        // $statement->execute();
+        // 4. Execute
+        $statement->execute();
 
-        // //5. Process the results
-        // $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        // 5. Process the results
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        // if ($result) {
-        //     return true;
-        // } else {
-        //     return false;
-        // }
-    }
-
-
-    function uploadPhoto($fileName)
-    {
-        // $db->exec('INSERT INTO UploadedPhotos (username, photo, quest) VALUES (?)', $fileName);
-        // //        PDO - Using Prepared Statements
-        // //        1. Define the query (test first!)
-        // $sql = "INSERT INTO UploadedPhotos (photo) VALUES ($fileName)";
-        // //        2. Prepare the statement
-        // $statement = $dbh->prepare($sql);
-        // //        3. Bind the parameters
-        // $statement->bindParam(param_name, value, type);
-        // //        4. Execute
-        // $statement->execute();
-        // //        5. Process the result, if there is one
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

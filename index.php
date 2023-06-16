@@ -1,10 +1,9 @@
 <?php
-/*
+/**
  * Slavik Khrapach
- * 5/11/2023
+ * 5/18/2023
  * 328/PhotoQuest/index.php
  * Controller for PhotoQuest project
- *
  */
 
 // Turn on error reporting
@@ -44,10 +43,7 @@ $f3->route('GET /contact-us', [$controller, 'contactUs']);
 
 $f3->route('POST /upload', [$controller, 'uploadPhoto']);
 
-// Test pages
 $f3->route('GET|POST /questTester', [$controller, 'questTester']);
-
-
 
 
 // Run the Fat-Free

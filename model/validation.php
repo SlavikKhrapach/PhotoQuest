@@ -1,7 +1,20 @@
 <?php
 
+/**
+ * 328/PhotoQuest/model/validation.php
+ * Contains functions to validate data
+ * in the PhotoQuest website
+ * This is part of the MODEL
+ */
+
 class Validate
 {
+    /**
+     * Sanitize a string by removing HTML tags and encoding special characters.
+     *
+     * @param string $string The string to sanitize
+     * @return string The sanitized string
+     */
     public static function sanitizeString($string)
     {
         // Remove HTML tags and encode special characters
@@ -11,6 +24,12 @@ class Validate
         return $sanitizedString;
     }
 
+    /**
+     * Validate a username.
+     *
+     * @param string $username The username to validate
+     * @return string Empty string if the username is valid, otherwise an error message
+     */
     public static function validateUsername($username)
     {
         // Sanitize the username
@@ -27,6 +46,12 @@ class Validate
         return ""; // Empty string indicates no validation errors
     }
 
+    /**
+     * Validate a password.
+     *
+     * @param string $password The password to validate
+     * @return string Empty string if the password is valid, otherwise an error message
+     */
     public static function validatePassword($password)
     {
         // Sanitize the password
@@ -43,6 +68,12 @@ class Validate
         return ""; // Empty string indicates no validation errors
     }
 
+    /**
+     * Validate a name.
+     *
+     * @param string $name The name to validate
+     * @return string Empty string if the name is valid, otherwise an error message
+     */
     public static function validateName($name)
     {
         // Sanitize the name
@@ -59,6 +90,12 @@ class Validate
         return ""; // No error
     }
 
+    /**
+     * Validate an email address.
+     *
+     * @param string $email The email address to validate
+     * @return string Empty string if the email is valid, otherwise an error message
+     */
     public static function validateEmail($email)
     {
         // Sanitize the email
@@ -80,6 +117,12 @@ class Validate
         return ""; // No error
     }
 
+    /**
+     * Validate a message.
+     *
+     * @param string $message The message to validate
+     * @return string Empty string if the message is valid, otherwise an error message
+     */
     public static function validateMessage($message)
     {
         // Sanitize the message
