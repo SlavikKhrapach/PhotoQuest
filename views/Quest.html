@@ -32,10 +32,11 @@
 
         <div class="nav bottom-nav">
             <ul class="row">
-                <li class="col-3"><a class="nav-link" href="current-quests"><b>Current Quests</b></a></li>
-                <li class="col-3"><a class="nav-link" href="past-quests">Past Quests</a></li>
-                <li class="col-3"><a class="nav-link" href="about-us">About Us</a></li>
-                <li class="col-3"><a class="nav-link" href="contact-us">Contact Us</a></li>
+                <li class="col-2"><a class="nav-link" href="current-quests">Current Quests</a></li>
+            <li class="col-2"><a class="nav-link" href="past-quests">Past Quests</a></li>
+            <li class="col-2"><a class="nav-link" href="about-us">About Us</a></li>
+            <li class="col-2"><a class="nav-link" href="contact-us"><b>Contact Us</b></a></li>
+            <li class="col-2"><a class="nav-link" href="upload-photo"><b>Upload Photo</b></a></li>
             </ul>
         </div>
 
@@ -61,9 +62,9 @@
             <repeat group="{{ @allQuests }}" value="{{ @quest }}" counter="{{ @counter }}">
                 <div class="contest">
                     <h3 class="userName">{{ @quest.name }}</h3>
-                    <img class="questPhoto" src="images/SalmonWellington/{{ @quest.path }}" data-action="zoom"
-                        data-original="images/SalmonWellington/{{ @quest.path }}" alt="journey_start_thumbnail" />
-    
+                    <img class="questPhoto" src="images/Uploads/{{ @quest.path }}" data-action="zoom"
+                        data-original="images/Uploads/{{ @quest.path }}" alt="journey_start_thumbnail" />
+                    <p class="description">{{ @quest.description }}</p>
                     <div class="count">
                         Vote: <input type="radio" name="vote" value="{{ @quest.id }}" /><br>
                     </div>

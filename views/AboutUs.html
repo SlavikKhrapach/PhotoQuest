@@ -15,23 +15,24 @@
     <a href="/328/PhotoQuest"><img src="images/logo2.png"  alt="logo" class="logo"></a>
     
     <div class="login">
-            <check if="{{ @user != false }}">
-                <true>
-                    <i class="text-white">{{ @user.username }} /</i>
-                    <a href="logout">Log Out</a>
-                </true>
-                <false>
-                    <a href="login">Log In/Sign Up</a>
-                </false>
-            </check>
-        </div>
+        <check if="{{ @user != false }}">
+            <true>
+                <i class="text-white">{{ @user.username }} /</i>
+                <a href="logout">Log Out</a>
+            </true>
+            <false>
+                <a href="login">Log In/Sign Up</a>
+            </false>
+        </check>
+    </div>
     
     <div class="nav bottom-nav">
         <ul class="row">
-            <li class="col-3"><a class="nav-link" href="current-quests">Current Quests</a></li>
-            <li class="col-3"><a class="nav-link" href="past-quests">Past Quests</a></li>
-            <li class="col-3"><a class="nav-link" href="about-us"><b>About Us</b></a></li>
-            <li class="col-3"><a class="nav-link" href="contact-us">Contact Us</a></li>
+            <li class="col-2"><a class="nav-link" href="current-quests">Current Quests</a></li>
+            <li class="col-2"><a class="nav-link" href="past-quests">Past Quests</a></li>
+            <li class="col-2"><a class="nav-link" href="about-us">About Us</a></li>
+            <li class="col-2"><a class="nav-link" href="contact-us"><b>Contact Us</b></a></li>
+            <li class="col-2"><a class="nav-link" href="upload-photo"><b>Upload Photo</b></a></li>
         </ul>
     </div>
     

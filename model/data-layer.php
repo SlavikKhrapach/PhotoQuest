@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '../pdo-config-photoquest.php');
+require_once('./pdo-config-photoquest.php');
 
 class DataLayer
 {
@@ -166,7 +166,7 @@ class DataLayer
 
         // Insert into database
         $sql = "INSERT INTO votes (account_id, photo_id) VALUES (:account_id, :photo_id)";
-
+        
         // Prepare the statement
         $statement = $this->_dbh->prepare($sql);
 
@@ -218,9 +218,38 @@ class DataLayer
         return false;
     }
 
-    function addPhoto()
-    {
-        // $sql = "INSERT";
+    function addPhoto($name, $description, $path) {
+        // Check if logged in
+        $user = $this->userInfo();
+
+        if (!$user) {
+            return false;
+        }
+
+        // Insert into database
+        $sql = "INSERT INTO photos (name, description, path, account_id) VALUES (:name, :description, :path, :account_id)";
+        
+        // Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        // Bind the parameters
+        $statement->bindParam(':name', $name, PDO::PARAM_STR);
+        $statement->bindParam(':description', $description, PDO::PARAM_STR);
+        $statement->bindParam(':path', $path, PDO::PARAM_STR);
+        $statement->bindParam(':account_id', $user['id'], PDO::PARAM_INT);
+
+        // Execute
+        $statement->execute();
+
+        // Process the results
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        // Return the result
+        if ($result) {
+            return false;
+        }
+
+        return true;
     }
 
     function createIfNotExists() // todo it will go away

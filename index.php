@@ -42,7 +42,7 @@ $f3->route('GET /about-us', [$controller, 'aboutUs']);
 
 $f3->route('GET /contact-us', [$controller, 'contactUs']);
 
-$f3->route('POST /upload', [$controller, 'uploadPhoto']);
+$f3->route('GET|POST /upload-photo', [$controller, 'photoUpload']);
 
 // Test pages
 $f3->route('GET|POST /questTester', [$controller, 'questTester']);

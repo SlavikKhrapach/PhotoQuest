@@ -126,26 +126,60 @@ class Controller
 
     function photoUpload()
     {
-        // Check if a file was uploaded
-        if ($_FILES['image']['error'] === UPLOAD_ERR_OK) {
-            // Get the uploaded file details
-            $fileName = $_FILES['image']['name'];
-            $tempFilePath = $_FILES['image']['tmp_name'];
-
-            // Move the file to a folder
-            $targetFolder = 'uploads/';
-            $targetFilePath = $targetFolder . $fileName;
-            move_uploaded_file($tempFilePath, $targetFilePath);
-
-            // Store file details in the database
-            echo $GLOBALS['dataLayer']->createIfNotExists($fileName);
-
-            // Redirect or display success message
-            // Your code here
-        } else {
-            // Handle upload error
-            // Your code here
+        if (!$this->user) {
+            $this->_f3->reroute('/logIn');
         }
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Get the form data
+            $name = $_POST['name'] ?? "";
+            $description = $_POST['description'] ?? "";
+
+            // Validate the data
+            if (empty($name)) {
+                $this->alert('Name is required!');
+            } else {
+                // Get file
+                $file = $_FILES['image'];
+
+                // Check for errors
+                if ($file['name'] == "") {
+                    $this->alert('Please choose a file');
+                } else {
+                    // Check for errors
+                    if ($file['error'] != 0) {
+                        $this->alert('Please upload a valid file');
+                    } else {
+                        // Check file size
+                        if ($file['size'] > 2000000) {
+                            $this->alert('File size exceeds limit');
+                        } else {
+                            // Check file type
+                            $fileType = mime_content_type($file['tmp_name']);
+                            if ($fileType != 'image/jpeg' && $fileType != 'image/png' && $fileType != 'image/gif' && $fileType != 'image/webp' && $fileType != 'image/jpg') {
+                                $this->alert('Invalid file type');
+                            } else {
+                                // Get file extension
+                                $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
+
+                                // Upload file
+                                $path = 'images/Uploads/';
+                                $destination = md5($file['name']) . '_' . time() . '.' . $fileExtension;
+                                move_uploaded_file($file['tmp_name'],$path . $destination);
+
+                                // Add to database
+                                if ($GLOBALS['dataLayer']->addPhoto($name, $description, $destination)) {
+                                    $this->alert('File uploaded successfully');
+                                } else {
+                                    $this->alert('File upload failed');
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        $view = new Template();
+        echo $view->render('views/UploadPhoto.html');
     }
 
     function alert($message)
